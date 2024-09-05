@@ -10,12 +10,12 @@ const ShowWeather = () => {
     
 if (search) return (
   <div className='flex'>
-      <h1>{search.main.temp}</h1>
-        <h2 className='inline-block mr-1'>{search.name}</h2>
-        <div className='flex'>
-        <p>{date}</p>
-        <img src={`http://openweathermap.org/img/wn/${search.weather[0].icon}@2x.png`} alt="" />
+      <h1 className='text-8xl'>{Math.floor(search.main.temp)}&deg; </h1>
+        <div className='flex flex-col justify-end ml-3'>
+        <h2 className='inline-block mr-1 text-6xl'>{search.name}</h2>
+        <p className='text-2xl'>{date}</p>
       </div>
+      <img src={`http://openweathermap.org/img/wn/${search.weather[0].icon}@2x.png`} alt="" className='h-24'/>
     </div>
  )
   
