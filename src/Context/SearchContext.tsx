@@ -7,6 +7,7 @@ export type GlobalContent = {
       "id": number,
       "main": string,
       "description": string,
+      "icon": string
     }
   ],
   "main": {
@@ -44,6 +45,7 @@ export const AppContext = ({children}:SearchProvideProps) => {
         id: 0,
         main: '',
         description: '',
+        icon: '',
       }
     ],
     main: {

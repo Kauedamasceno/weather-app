@@ -1,8 +1,4 @@
-import React from 'react'
-
-type DisplayDetailsProps = {}
-
-const DisplayDetails = (props: DisplayDetailsProps) => {
+const DisplayDetails = () => {
   return (
     <div className='h-full w-full flex flex-col  text-white'>
       <p className='mb-10'>Weather Details...</p>

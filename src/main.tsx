@@ -5,11 +5,13 @@ import './index.css'
 import { AppContext} from './Context/SearchContext.tsx'
 
 createRoot(document.getElementById('root')!).render(
-  <StrictMode>
+ <StrictMode>
     <AppContext>
        <App/>
     </AppContext>
+ </StrictMode>
+    
      
     
-  </StrictMode>,
+
 )

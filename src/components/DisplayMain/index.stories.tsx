@@ -1,17 +1,18 @@
 import type { Meta, StoryObj } from '@storybook/react';
-
-import { MainDisplay } from '.';
-
-
-let search1 = 'oi'
+import DisplayMain  from '../DisplayMain/index';
+import { AppContext } from '../../Context/SearchContext';
 
 const meta = {
   title: 'Main Display',
-  component: MainDisplay,
-  args: {
-    children: search1
-  }
-} satisfies Meta<typeof MainDisplay>
+  component: DisplayMain,
+  decorators: [
+    (Story) => (
+      <AppContext>
+        <Story />
+      </AppContext>
+    )
+  ]
+} satisfies Meta<typeof DisplayMain>
 
 export default meta
 type Story = StoryObj<typeof meta>
