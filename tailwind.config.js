@@ -9,7 +9,7 @@ export default {
     extend: {
       fontFamily: {
         roboto:["Roboto", "system-ui"]
-      }
+      },
     },
   },
   plugins: [],

@@ -7,9 +7,12 @@ const meta = {
   component: DisplayMain,
   decorators: [
     (Story) => (
-      <AppContext>
+      <html style={{height: '100vh'}}>
+        <AppContext>
         <Story />
       </AppContext>
+      </html>
+      
     )
   ]
 } satisfies Meta<typeof DisplayMain>

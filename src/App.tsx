@@ -1,13 +1,13 @@
 import Logo from './components/Logo';
 import Search from './components/Search';
 import  MainDisplay  from './components/DisplayMain';
+import DisplayDetails from './components/DisplayDetails';
+import DisplayContainerDetails from './template/DisplayContainerDetails';
 
 export default function App() {
    
-   return <div className='bg-red-400 w-full h-full flex justify-center items-center'>
-       <h1 className="text-3xl font-bold underline"> Hello world!</h1>
-    <Logo nameLogo='oioi'/>
-    <Search/>
+   return <div className=' w-full h-full justify-between flex bg-[url("./assets/background2.jpg")] bg-cover text-white'>
     <MainDisplay/>
+    <DisplayContainerDetails/>
      </div> 
 }

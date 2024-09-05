@@ -1,10 +1,10 @@
 const DisplayDetails = () => {
   return (
-    <div className='h-full w-full flex flex-col  text-white'>
+    <div className='h-full w-full flex flex-col  text-white backdrop-blur-3xl'>
       <p className='mb-10'>Weather Details...</p>
       <div>
-        <h2 className='w-full mb-10 font-bold'>ThunderStorm with light drizzle</h2>
-            <div className='flex justify-between mb-10'>
+        <h2 className='w-full mb-14 font-bold'>ThunderStorm with light drizzle</h2>
+            <div className='flex justify-between mb-14'>
               <p>Temp max</p>
               <span className='flex items-center'>19  
                <svg xmlns="http://www.w3.org/2000/svg" 
@@ -19,7 +19,7 @@ const DisplayDetails = () => {
             </div>
 
 
-            <div className='flex justify-between mb-10'>
+            <div className='flex justify-between mb-14'>
               <p>Temp min</p>
               <span className='flex items-center'>11
                <svg  xmlns="http://www.w3.org/2000/svg" 
@@ -35,7 +35,7 @@ const DisplayDetails = () => {
             </div>
 
 
-            <div className='flex justify-between mb-10'>
+            <div className='flex justify-between mb-14'>
               <p>Humadity</p>
               <span className='flex items-center'>86% 
                <svg xmlns="http://www.w3.org/2000/svg" 
@@ -55,7 +55,7 @@ const DisplayDetails = () => {
             </div>
 
 
-            <div className='flex justify-between mb-10'>
+            <div className='flex justify-between mb-14'>
               <p>Cloudy</p>
               <span className='flex items-center'>86% 
               <svg xmlns="http://www.w3.org/2000/svg" 
@@ -73,7 +73,7 @@ const DisplayDetails = () => {
             </div>
 
 
-            <div className='flex justify-between mb-10'>
+            <div className='flex justify-between mb-14'>
               <p>Wind</p>
              <span className='flex items-center'>%km/h 
               <svg xmlns="http://www.w3.org/2000/svg" 
