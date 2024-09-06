@@ -1,16 +1,22 @@
+import { useContext } from 'react'
+import { SearchContext } from '../../Context/SearchContext'
+
 const DisplayDetails = () => {
+
+  const {search} = useContext(SearchContext)
+
   return (
     <div className='h-full w-full flex flex-col  text-white backdrop-blur-3xl'>
       <p className='mb-10'>Weather Details...</p>
       <div>
-        <h2 className='w-full mb-14 font-bold'>ThunderStorm with light drizzle</h2>
+        <h2 className='w-full mb-14 font-bold'>{search.weather[0].description.toUpperCase()}</h2>
             <div className='flex justify-between mb-14'>
               <p>Temp max</p>
-              <span className='flex items-center'>19  
+              <span className='flex items-center'>{Math.floor(search.main.temp_max)}&deg; 
                <svg xmlns="http://www.w3.org/2000/svg" 
                 width="16" height="16" 
                 fill="currentColor" 
-                className="bi bi-thermometer-high ml-1" 
+                className="bi bi-thermometer-high ml-1 text-red-900" 
                 viewBox="0 0 16 16">
                 <path d="M9.5 12.5a1.5 1.5 0 1 1-2-1.415V2.5a.5.5 0 0 1 1 0v8.585a1.5 1.5 0 0 1 1 1.415"/>
                 <path d="M5.5 2.5a2.5 2.5 0 0 1 5 0v7.55a3.5 3.5 0 1 1-5 0zM8 1a1.5 1.5 0 0 0-1.5 1.5v7.987l-.167.15a2.5 2.5 0 1 0 3.333 0l-.166-.15V2.5A1.5 1.5 0 0 0 8 1"/>
@@ -21,12 +27,12 @@ const DisplayDetails = () => {
 
             <div className='flex justify-between mb-14'>
               <p>Temp min</p>
-              <span className='flex items-center'>11
+              <span className='flex items-center'>{Math.floor(search.main.temp_min)}&deg;
                <svg  xmlns="http://www.w3.org/2000/svg" 
                width="16" 
                height="16" 
                fill="currentColor" 
-               className="bi bi-thermometer ml-1" 
+               className="bi bi-thermometer ml-1 text-blue-600" 
                viewBox="0 0 16 16">
                <path d="M8 14a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"/>
                <path d="M8 0a2.5 2.5 0 0 0-2.5 2.5v7.55a3.5 3.5 0 1 0 5 0V2.5A2.5 2.5 0 0 0 8 0M6.5 2.5a1.5 1.5 0 1 1 3 0v7.987l.167.15a2.5 2.5 0 1 1-3.333 0l.166-.15z"/>
@@ -37,7 +43,7 @@ const DisplayDetails = () => {
 
             <div className='flex justify-between mb-14'>
               <p>Humadity</p>
-              <span className='flex items-center'>86% 
+              <span className='flex items-center'>{Math.floor(search.main.humidity)}%
                <svg xmlns="http://www.w3.org/2000/svg" 
                 width="16" 
                 height="16" 
@@ -57,7 +63,7 @@ const DisplayDetails = () => {
 
             <div className='flex justify-between mb-14'>
               <p>Cloudy</p>
-              <span className='flex items-center'>86% 
+              <span className='flex items-center'>{Math.floor(search.clouds.all)}%
               <svg xmlns="http://www.w3.org/2000/svg" 
               width="16" 
               height="16" 
@@ -75,7 +81,7 @@ const DisplayDetails = () => {
 
             <div className='flex justify-between mb-14'>
               <p>Wind</p>
-             <span className='flex items-center'>%km/h 
+             <span className='flex items-center'>{Math.floor(search.wind.speed)}km/h 
               <svg xmlns="http://www.w3.org/2000/svg" 
                 width="16" height="16" 
                 fill="currentColor" 

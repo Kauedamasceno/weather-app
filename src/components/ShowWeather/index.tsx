@@ -1,12 +1,16 @@
-import { useContext, } from 'react'
+import { useContext, useState, } from 'react'
 import { DateNow } from '../../hooks/useDate'
 import { useLoadFetch } from '../../hooks/useFetchLoading'
 import { SearchContext } from '../../Context/SearchContext'
 
 const ShowWeather = () => {
+  const [date,setDate] = useState(DateNow())
   useLoadFetch()
   const {search} = useContext(SearchContext)
-  const date = DateNow()
+  //let date = DateNow()
+  setInterval(() => {
+    setDate(DateNow()) 
+  }, 1000);
     
 if (search) return (
   <div className='flex'>
