@@ -6,11 +6,11 @@ const DisplayDetails = () => {
   const {search} = useContext(SearchContext)
 
   return (
-    <div className='h-full w-full flex flex-col  text-white backdrop-blur-3xl'>
+    <div className=' w-full flex flex-col  text-white backdrop-blur-3xl max-md:h-auto '>
       <p className='mb-10'>Weather Details...</p>
       <div>
-        <h2 className='w-full mb-14 font-bold'>{search.weather[0].description.toUpperCase()}</h2>
-            <div className='flex justify-between mb-14'>
+        <h2 className='w-full mb-14 font-bold max-md:mb-7 text-center'>{search.weather[0].description.toUpperCase()}</h2>
+            <div className='flex justify-between mb-14 max-md:mb-7'>
               <p>Temp max</p>
               <span className='flex items-center'>{Math.floor(search.main.temp_max)}&deg; 
                <svg xmlns="http://www.w3.org/2000/svg" 
@@ -25,7 +25,7 @@ const DisplayDetails = () => {
             </div>
 
 
-            <div className='flex justify-between mb-14'>
+            <div className='flex justify-between mb-14 max-md:mb-7'>
               <p>Temp min</p>
               <span className='flex items-center'>{Math.floor(search.main.temp_min)}&deg;
                <svg  xmlns="http://www.w3.org/2000/svg" 
@@ -41,7 +41,7 @@ const DisplayDetails = () => {
             </div>
 
 
-            <div className='flex justify-between mb-14'>
+            <div className='flex justify-between mb-14 max-md:mb-7'>
               <p>Humadity</p>
               <span className='flex items-center'>{Math.floor(search.main.humidity)}%
                <svg xmlns="http://www.w3.org/2000/svg" 
@@ -61,7 +61,7 @@ const DisplayDetails = () => {
             </div>
 
 
-            <div className='flex justify-between mb-14'>
+            <div className='flex justify-between mb-14 max-md:mb-7'>
               <p>Cloudy</p>
               <span className='flex items-center'>{Math.floor(search.clouds.all)}%
               <svg xmlns="http://www.w3.org/2000/svg" 
@@ -79,7 +79,7 @@ const DisplayDetails = () => {
             </div>
 
 
-            <div className='flex justify-between mb-14'>
+            <div className='flex justify-between mb-14 max-md:mb-7'>
               <p>Wind</p>
              <span className='flex items-center'>{Math.floor(search.wind.speed)}km/h 
               <svg xmlns="http://www.w3.org/2000/svg" 

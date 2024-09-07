@@ -13,13 +13,13 @@ const ShowWeather = () => {
   }, 1000);
     
 if (search) return (
-  <div className='flex'>
-      <h1 className='text-8xl'>{Math.floor(search.main.temp)}&deg; </h1>
+  <div className='flex max-md:justify-center max-sm:flex-col max-sm:text-center max-sm:items-center'>
+      <h1 className='text-8xl max-sm:text-6xl'>{Math.floor(search.main.temp)}&deg; </h1>
         <div className='flex flex-col justify-end ml-3'>
-        <h2 className='inline-block mr-1 text-6xl'>{search.name}</h2>
-        <p className='text-2xl'>{date}</p>
+        <h2 className='inline-block mr-1 text-6xl max-lg:text-4xl'>{search.name}</h2>
+        <p className='text-2xl max-lg:text-base'>{date}</p>
       </div>
-      <img src={`http://openweathermap.org/img/wn/${search.weather[0].icon}@2x.png`} alt="" className='h-24'/>
+      <img src={`http://openweathermap.org/img/wn/${search.weather[0].icon}@2x.png`} alt="" className='h-24 max-sm:h-auto max-sm:w-3/12' />
     </div>
  )
   
