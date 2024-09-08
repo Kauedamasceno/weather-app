@@ -12,7 +12,7 @@ const Search =  () => {
   }
 
   return (
-    <div className='h-10 border-b-2 border-white flex mb-16 '>
+    <div className='h-10 border-b-2 border-white flex mb-4 '>
       <input type="text" onChange={(e) => setSearchInput(e.target.value)} className='h-full w-11/12 bg-transparent text-white focus:outline-none justify-between' />
       <svg xmlns="http://www.w3.org/2000/svg" 
         width="16" 
