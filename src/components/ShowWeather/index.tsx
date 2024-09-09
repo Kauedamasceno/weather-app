@@ -13,9 +13,9 @@ const ShowWeather = () => {
   }, 1000);
     
 if (search) return (
-  <div className='flex max-md:justify-center max-sm:flex-col max-sm:text-center max-sm:items-center'>
+  <div className='flex max-md:justify-center max-sm:flex-col  max-sm:items-center max-sm:text-center'>
       <h1 className='text-8xl max-sm:text-6xl'>{Math.floor(search.main.temp)}&deg; </h1>
-        <div className='flex flex-col justify-end ml-3'>
+        <div className='ml-3 flex flex-col justify-end '>
         <h2 className='inline-block mr-1 text-6xl max-lg:text-4xl'>{search.name}</h2>
         <p className='text-2xl max-lg:text-base'>{date}</p>
       </div>

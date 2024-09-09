@@ -9,8 +9,8 @@ const DisplayDetails = () => {
   if (search) return (
    <>
    <p className='mb-10'>Weather Details...</p>
-      <div className=' flex flex-col max-md:justify-between md:gap-16 h-full'>
-        <h2 className='w-full mb-14 font-bold max-md:mb-7 text-center'>{search.weather[0].description.toUpperCase()}</h2>
+      <div className='h-full flex flex-col max-md:justify-between md:gap-16 '>
+        <h2 className='w-full mb-14 font-bold text-center max-md:mb-7 '>{search.weather[0].description.toUpperCase()}</h2>
             <div className='flex justify-between'>
               <p>Temp max</p>
               <span className='flex items-center'>{Math.floor(search.main.temp_max)}&deg; 
