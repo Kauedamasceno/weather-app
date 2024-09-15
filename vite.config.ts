@@ -19,7 +19,17 @@ export default defineConfig({
       "src/components/Logo/index.stories.ts"
     ],
     coverage : {
-      exclude: ['**/__tests__/**', '**/node_modules/**', '**/index.stories.{ts,tsx}',"**/postcss.config.js", "**/tailwind.config.js", "**/vite.config.ts", "**/.storybook/**", "**/vite-env.d.ts", "**/main.tsx"],
+      exclude: ['**/__tests__/**', 
+        '**/node_modules/**',
+        '**/index.stories.{ts,tsx}',
+        "**/postcss.config.js", 
+        "**/tailwind.config.js", 
+        "**/vite.config.ts", 
+        "**/.storybook/**", 
+        "**/vite-env.d.ts", 
+        "**/main.tsx",
+        "**/*.test.{ts,tsx}"
+      ],
   
     }
   },
