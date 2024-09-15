@@ -34,7 +34,7 @@ const GlobalState = {
 
 export const SearchContext = createContext(GlobalState)
 
-type SearchProvideProps = {
+export type SearchProvideProps = {
   children: ReactNode
 }
 

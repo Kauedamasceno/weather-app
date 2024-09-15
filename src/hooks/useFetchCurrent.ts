@@ -10,7 +10,8 @@ export const useSearchWeather = async ({searchInput}:useSearchWeatherProps) => {
   const data = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchInput}&appid=${searchKey}&units=metric`)
 
   if (data.status === 404) {
-    return undefined
+    return 'City not found'
+    
   }
   const response = await data.json()
   return response
@@ -20,7 +21,7 @@ export const useSearchWeather = async ({searchInput}:useSearchWeatherProps) => {
 
 /////////////////////////////////////////////////////////////////////////////////////////
 //       remove blank space
-const WordInput = (word:String) => {
+export const WordInput = (word:String) => {
   let wordArray = word.split(' ');
   if (wordArray[1] === '') {
     const WordSlice = wordArray.find(e => e !== '');

@@ -4,7 +4,7 @@ import { useLoadFetch } from '../../hooks/useFetchLoading'
 import { SearchContext } from '../../Context/SearchContext'
 
 const ShowWeather = () => {
-  const [date,setDate] = useState(DateNow())
+ const [date,setDate] = useState(DateNow())
   useLoadFetch()
   const {search} = useContext(SearchContext)
   //let date = DateNow()

@@ -1,0 +1,54 @@
+
+import { useLoadFetch } from '../hooks/useFetchLoading';
+import { SearchContext, SearchProvideProps } from '../Context/SearchContext';
+import { useSearchWeather } from '../hooks/useFetchCurrent';
+import { describe, expect, it, Mock, vi } from 'vitest';
+import { renderHook, waitFor } from '@testing-library/react';
+import { dataMock } from './useFetchCurrent.test';
+
+
+const data = {
+    weather: [
+      {
+        id: 0,
+        main: '',
+        description: '',
+        icon: '',
+      }
+    ],
+    main: {
+      temp: 0,
+      temp_min: 0,
+      temp_max: 0,
+      humidity: 0,
+    },
+    wind: {
+      speed: 0,
+    },
+    clouds: {
+      all: 0
+    },
+    name: ''
+  }
+// // Mock do hook `useSearchWeather`
+vi.mock('../hooks/useFetchCurrent', () => ({
+  useSearchWeather: vi.fn(),
+}));
+
+// vi.mock('../hooks/useFetchCurrent', () => ({
+//   useSearchWeather: vi.fn(() => {
+//     Promise.resolve({
+//       json: Promise.resolve(data)
+//     })
+//   }),
+// }));
+
+ describe('useLoadFetch', () => {
+  it('oi', () => {
+    const useSearchWeatherMock = (useSearchWeather as Mock).mockImplementation(() => data)
+    renderHook(() => useLoadFetch())
+
+  expect(useSearchWeather).toHaveBeenCalledTimes(1)
+})
+ });
+

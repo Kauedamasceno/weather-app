@@ -4,17 +4,17 @@ import { useSearchWeather } from './useFetchCurrent'
 
 export const useLoadFetch = () => {
   const {search,setSearch} = useContext(SearchContext)
-
- useEffect(() => {
+useEffect(() => {
     const fetchData = async () => {
     // fetch weather data from API
     const data = await useSearchWeather({searchInput: 'new york'})
-    setSearch(data) 
+    setSearch(data)
   }
   fetchData()
 },[])
 
-  return {search}
+  
+  return {search,setSearch}
 }
 
 
