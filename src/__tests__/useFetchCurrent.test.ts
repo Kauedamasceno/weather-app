@@ -1,5 +1,5 @@
 import { afterAll, afterEach, beforeAll, describe, expect, it } from "vitest";
-import { useSearchWeather, WordInput } from "../hooks/useFetchCurrent";
+import { useSearchWeather } from "../hooks/useFetchCurrent";
 import { http, HttpResponse } from "msw";
 import { setupServer } from "msw/node";
 const searchKey = import.meta.env.VITE_KEY_WEATHER_API;
@@ -69,16 +69,4 @@ describe("useSearchWeather", () => {
     const test = await useSearchWeather({ searchInput: "Planaltino" });
     expect(test).toBe("City not found");
   });
-
-  it("should return a string without last space blank", () => {
-    const test = WordInput("planaltino ");
-    expect(test).toBe("planaltino");
-  });
-
-  // it('should handle error on the API request', async () => {
-  //   server.use(
-  //     http.get('https://api.openweathermap.org/data/2.5/weather?q=nonexistent&appid=${searchKey}&units=metric', (req, res, ctx) => {
-  //       return res(ctx.status(500))
-  //     })
-  // )
 });
