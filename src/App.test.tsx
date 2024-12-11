@@ -1,16 +1,16 @@
-import { describe, it, expect, test } from 'vitest';
-import { render } from '@testing-library/react';
-import App from './App';
+import { describe, it, expect, test } from "vitest";
 
-import { ContextRender } from './__tests__/renderTest';
+import App from "./App";
 
-test('demo', () => {
+import { ContextRender } from "./__tests__/renderTest";
+
+test("demo", () => {
   expect(true).toBe(true);
 });
 
-describe('render', () => {
-  it('renders the main page', () => {
-    ContextRender(<App/>)
+describe("render", () => {
+  it("renders the main page", () => {
+    ContextRender(<App />);
     expect(true).toBeTruthy();
   });
 });
