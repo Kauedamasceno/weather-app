@@ -41,9 +41,6 @@ vi.mock("../hooks/useFetchCurrent", () => ({
 
 describe("useLoadFetch", () => {
   it("oi", () => {
-    const useSearchWeatherMock = (useSearchWeather as Mock).mockImplementation(
-      () => data,
-    );
     renderHook(() => useLoadFetch());
 
     expect(useSearchWeather).toHaveBeenCalledTimes(1);
