@@ -1,36 +1,36 @@
- type useSearchWeatherProps = {
-  searchInput: String
- }
+type useSearchWeatherProps = {
+  searchInput: String;
+};
 
-export const useSearchWeather = async ({searchInput}:useSearchWeatherProps) => {
-  const searchKey = import.meta.env.VITE_KEY_WEATHER_API
+export const useSearchWeather = async ({
+  searchInput,
+}: useSearchWeatherProps) => {
+  const searchKey = import.meta.env.VITE_KEY_WEATHER_API;
 
-  searchInput = WordInput(searchInput)
+  searchInput = WordInput(searchInput);
 
-  const data = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchInput}&appid=${searchKey}&units=metric`)
+  const data = await fetch(
+    `https://api.openweathermap.org/data/2.5/weather?q=${searchInput}&appid=${searchKey}&units=metric&lang=pt_br`,
+  );
 
   if (data.status === 404) {
-    return 'City not found'
-    
+    return "City not found";
   }
-  const response = await data.json()
-  return response
-}
-
-
+  const response = await data.json();
+  return response;
+};
 
 /////////////////////////////////////////////////////////////////////////////////////////
 //       remove blank space
-export const WordInput = (word:String) => {
-  let wordArray = word.split(' ');
-  if (wordArray[1] === '') {
-    const WordSlice = wordArray.find(e => e !== '');
+export const WordInput = (word: String) => {
+  let wordArray = word.split(" ");
+  if (wordArray[1] === "") {
+    const WordSlice = wordArray.find((e) => e !== "");
     if (WordSlice) word = WordSlice;
-  return word;
+    return word;
   }
   return word;
-  
-}
+};
 
 // //const WordInput = (word:String) => {
 //   let wordArray = word.split(' ')
@@ -43,4 +43,3 @@ export const WordInput = (word:String) => {
 //   }
 
 //   return word
-  

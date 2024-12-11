@@ -1,52 +1,58 @@
-import { createContext, Dispatch, ReactNode, SetStateAction, useState } from 'react';
+import {
+  createContext,
+  Dispatch,
+  ReactNode,
+  SetStateAction,
+  useState,
+} from "react";
 
 export type GlobalContent = {
-  search:{
-  "weather": [
-    {
-      "id": number,
-      "main": string,
-      "description": string,
-      "icon": string
-    }
-  ],
-  "main": {
-    "temp": number,
-    "temp_min": number,
-    "temp_max": number,
-    "humidity": number,
-  },
-  "wind": {
-    "speed": number,
-  },
-  "clouds": {
-    "all": number
-  },
-  "name": string,
-  },
-  setSearch:Dispatch<SetStateAction<GlobalContent['search']>>
-}
+  search: {
+    weather: [
+      {
+        id: number;
+        main: string;
+        description: string;
+        icon: string;
+      },
+    ];
+    main: {
+      temp: number;
+      temp_min: number;
+      temp_max: number;
+      humidity: number;
+    };
+    wind: {
+      speed: number;
+    };
+    clouds: {
+      all: number;
+    };
+    name: string;
+  };
+  setSearch: Dispatch<SetStateAction<GlobalContent["search"]>>;
+};
 
 const GlobalState = {
   search: {},
-  setSearch: ({}) => {}
-} as GlobalContent
+  setSearch: ({}) => {},
+} as GlobalContent;
 
-export const SearchContext = createContext(GlobalState)
+export const SearchContext = createContext(GlobalState);
 
 export type SearchProvideProps = {
-  children: ReactNode
-}
+  children: ReactNode;
+};
 
-export const AppContext = ({children}:SearchProvideProps) => {
-  const [search, setSearch] = useState<GlobalContent['search']>({
+export const AppContext = ({ children }: SearchProvideProps) => {
+  const [search, setSearch] = useState<GlobalContent["search"]>({
     weather: [
       {
         id: 0,
-        main: '',
-        description: '',
-        icon: '',
-      }
+        main: "",
+        description: "",
+        icon: "",
+      },
     ],
     main: {
       temp: 0,
@@ -58,11 +64,14 @@ export const AppContext = ({children}:SearchProvideProps) => {
       speed: 0,
     },
     clouds: {
-      all: 0
+      all: 0,
     },
-    name: ''
-  })
+    name: "",
+  });
 
-
-  return <SearchContext.Provider value={{search, setSearch}}>{children}</SearchContext.Provider>
-}
+  return (
+    <SearchContext.Provider value={{ search, setSearch }}>
+      {children}
+    </SearchContext.Provider>
+  );
+};
